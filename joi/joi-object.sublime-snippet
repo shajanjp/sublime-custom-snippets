@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+var ${1:car} = joi.object().keys({
+	${2:title}: joi.number().max(1024).allow('').optional().default(0)
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>joiobject</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
