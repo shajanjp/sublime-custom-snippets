@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+${1:collection}.update({ _id: ${2:} }, {$push: {${3:}}}, { safe:true, upsert: true }, function(err, doc){
+        if (err) 
+            res.status(500).json('');
+        else
+            res.status(200).json('');
+    });
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mongoupdate</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

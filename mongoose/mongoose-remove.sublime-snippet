@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+${1:collection}.remove({${3:_id:}}, function(err){
+		if (err)
+			res.json(err);
+		else{
+			res.json({'msg': '${1:collection} Removed !'});
+		}
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mongoremove</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+${1:collection}.findOne({ _id: req.user_id })
+	.populate({ path: '${3:target}', select: 'title _id'})
+	.exec(function (err, ${2:collection}) {
+		if (err || ${2:collection}==null || ${2:collection}==undefined)
+			res.status(401).json(err);
+		else{
+			res.json(${2:collection})
+		}
+	});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>mongopopulate</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
