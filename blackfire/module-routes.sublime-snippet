@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+app.route(domainRoot + '/${1:cars}')
+.get(${1:cars}Controller.list${2:Car}sAPI) // home.ejs
+.post(${1:cars}Controller.create${2:Car}API);
+
+app.route(domainRoot + '/${1:cars}/search')
+.get(${1:cars}Controller.search${2:Car}API);
+
+app.route(domainRoot + '/${1:cars}/:${3:car}_id')
+.get(${1:cars}Controller.view${2:Car}API)
+.put(${1:cars}Controller.update${2:Car}API)
+.delete(${1:cars}Controller.remove${2:Car}API);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>moduleroutes</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

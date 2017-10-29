@@ -1,0 +1,30 @@
+<snippet>
+	<content><![CDATA[
+var joi = require('joi');
+
+var ${1:car}Schema = joi.object().keys({
+	title: joi.string().max(64).optional(),
+	item_number: joi.number().min(1).max(1000).optional(),
+	has_projector: joi.boolean().truthy('on').optional().default(false)
+});
+
+
+exports.validate${2:Car} = function(${1:car}){
+	let validated${2:Car} = {};
+	joi.validate(${1:car}, ${1:car}Schema, { 'stripUnknown' : true }, function(err, value){
+		if(err){
+			validated${2:Car}.err=err.details;
+		}
+		else{
+			validated${2:Car}.data = value;
+		}				
+	});
+	if(validated${2:Car}) return validated${2:Car};
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>modulevalidation</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

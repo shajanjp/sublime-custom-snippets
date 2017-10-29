@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+${1:Car}.findOne({ _id: ${2:object}_id }, function(err, ${2:object}){
+	if(err || ${2:object}===null || ${2:object}===undefined)
+		res.status(404).json('');
+	else{
+		req.${2:object}_id = ${2:object}._id; 
+		next();
+	}
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>modulebyid</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
