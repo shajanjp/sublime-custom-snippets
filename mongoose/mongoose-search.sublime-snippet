@@ -1,13 +1,13 @@
 <snippet>
 	<content><![CDATA[
-let search = new RegExp('^(.* |)'+ req.query.q +'.*\$', "i");
-${1:Model}.find({\$or:[{}], role: 'student'}, function(err, ${2:object}_list){
-	if (err || ${2:object}_list==null || ${2:object}_list==undefined)
-		res.status(401).json(err);
-	else{
-		res.json(${2:object}_list)
-	}
-});
+  let search = new RegExp('^(.* |)' + req.query.q + '.*$', 'i')
+  ${1:Collection}.find({$or: [{ title: search }], role: 'student'})
+    .then((${2:collection}List) => {
+      return res.json(${2:collection}List)
+    })
+    .catch(err => {
+      return res.status(400).json(err)
+    })
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>mongosearch</tabTrigger>

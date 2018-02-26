@@ -1,12 +1,12 @@
 <snippet>
 	<content><![CDATA[
-${1:collection}.findOne({${3:_id:}}, function(err, ${2:collection}){
-		if (err || ${2:collection}==null || ${2:collection}==undefined)
-			res.status(401).json(err);
-		else{
-			res.json(${2:collection})
-		}
-});
+  ${1:Collection}.findOne({ _id: res.locals.${2:collection}Id })
+    .then((${2:collection}) => {
+      return res.json(${2:collection})
+    })
+    .catch(err => {
+      return res.status(400).json(err)
+    })
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>mongofindone</tabTrigger>

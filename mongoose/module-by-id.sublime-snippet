@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+  ${1:Collection}.findOne({ _id: ${2:user}Id }, function (err, ${2:user}) {
+    if (err || ${2:user} === null || ${2:user} === undefined) {
+      res.status(404).json('')
+    } else {
+      res.locals.${2:user}Id = ${2:user}._id
+      next()
+    }
+  })
+  next()
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>modulebyid</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

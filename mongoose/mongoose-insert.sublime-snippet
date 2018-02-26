@@ -1,19 +1,18 @@
 <snippet>
 	<content><![CDATA[
-let validated${1:Module} = ${2:module}Validation.validate${1:Module}(req.body);
-if (validated${1:Module}.err){
-	console.log(validated${1:Module}.err);
-	res.status(400).json({msg: "Validation failed !"});
-}
-else{
-	let new_${4:object} = new ${1:Module}(validated${1:Module}.data);
-	new_${4:object}.save(function(err, ${4:object}){
-		if(err)
-			res.json({'msg': 'Error in saving.'});
-		else
-			res.json(${4:object})
-	});
-}
+  let validated${1:Collection} = ${2:collection}Validation.validate${1:Collection}(req.body)
+  if (validated${1:Collection}.err) {
+    return res.status(400).json({msg: 'Validation failed !'})
+  } else {
+    let new${1:Collection} = new ${1:Collection}(validated${1:Collection}.data)
+    new${1:Collection}.save()
+      .then((${2:collection}) => {
+        return res.status(201).json(${2:collection})
+      })
+      .catch(err => {
+        return res.status(400).json(err)
+      })
+  }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>mongoinsert</tabTrigger>

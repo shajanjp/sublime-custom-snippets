@@ -1,12 +1,12 @@
 <snippet>
 	<content><![CDATA[
-${1:collection}.remove({${3:_id:}}, function(err){
-		if (err)
-			res.json(err);
-		else{
-			res.json({'msg': '${1:collection} Removed !'});
-		}
-});
+  ${1:Collection}.remove({ _id: res.locals.${2:collection}d })
+    .then(() => {
+      return res.json({ 'msg': '${1:Collection} Removed !' })
+    })
+    .catch(err => {
+      return res.satus(400).json(err)
+    })
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>mongoremove</tabTrigger>
