@@ -1,12 +1,12 @@
 <snippet>
 	<content><![CDATA[
-  let search = new RegExp('^(.* |)' + req.query.q + '.*$', 'i')
+  let search = new RegExp('^(.* |)' + req.query.q + '.*$', 'i');
   ${1:Collection}.find({$or: [{ title: search }], role: 'student'})
     .then((${2:collection}List) => {
-      return res.json(${2:collection}List)
+      return res.json(${2:collection}List);
     })
     .catch(err => {
-      return res.status(400).json(err)
+      return res.status(400).json(err);
     })
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

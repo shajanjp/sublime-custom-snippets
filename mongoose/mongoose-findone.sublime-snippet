@@ -2,11 +2,11 @@
 	<content><![CDATA[
   ${1:Collection}.findOne({ _id: res.locals.${2:collection}Id })
     .then((${2:collection}) => {
-      return res.json(${2:collection})
+      return res.json(${2:collection});
     })
     .catch(err => {
-      return res.status(400).json(err)
-    })
+      return res.status(400).json(err);
+    });
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>mongofindone</tabTrigger>

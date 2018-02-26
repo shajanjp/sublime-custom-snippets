@@ -2,11 +2,11 @@
 	<content><![CDATA[
   ${1:Collection}.find({ _id: res.locals.${2:collection}Id })
     .then((${2:collection}List) => {
-      return res.json(${2:collection}List)
+      return res.json(${2:collection}List);
     })
     .catch((err) => {
-      return res.status(400).json(err)
-    })
+      return res.status(400).json(err);
+    });
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>mongofind</tabTrigger>

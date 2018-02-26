@@ -1,17 +1,17 @@
 <snippet>
 	<content><![CDATA[
-  let validated${1:Collection} = ${2:collection}Validation.validate${1:Collection}(req.body)
+  let validated${1:Collection} = ${2:collection}Validation.validate${1:Collection}(req.body);
   if (validated${1:Collection}.err) {
-    console.log(validated${1:Collection}.err)
-    return res.status(400).json({ msg: 'Validation failed !' })
+    console.log(validated${1:Collection}.err);
+    return res.status(400).json({ msg: 'Validation failed !' });
   } else {
-    let new${1:Collection} = validated${1:Collection}.data
+    let new${1:Collection} = validated${1:Collection}.data;
     ${1:Collection}.update({ _id: res.locals.${2:collection}Id }, new${1:Collection}, { safe: true, upsert: true })
       .then(${2:collection} => {
-        return res.json(${2:collection})
+        return res.json(${2:collection});
       })
       .catch(err => {
-        return res.status(400).json({ 'msg': 'Internal error', 'err': err })
+        return res.status(400).json({ 'msg': 'Internal error', 'err': err });
       })
   }
 ]]></content>

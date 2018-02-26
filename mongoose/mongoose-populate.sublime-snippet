@@ -4,10 +4,10 @@
     .populate({ path: 'target', select: 'title _id' })
     .exec()
     .then((${2:collection}) => {
-      return res.json(user)
+      return res.json(user);
     })
     .catch(err => {
-      return res.status(400).json(err)
+      return res.status(400).json(err);
     })
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

@@ -1,14 +1,13 @@
 <snippet>
 	<content><![CDATA[
-  ${1:Collection}.findOne({ _id: ${2:user}Id }, function (err, ${2:user}) {
-    if (err || ${2:user} === null || ${2:user} === undefined) {
-      res.status(404).json('')
-    } else {
-      res.locals.${2:user}Id = ${2:user}._id
-      next()
-    }
-  })
-  next()
+  ${1:Collection}.findOne({ _id: ${2:collection}Id })
+    .then(${2:collection} => {
+      res.locals.${2:collection}Id = ${2:collection}._id;
+      next();
+    })
+    .catch(err => {
+      res.status(404).json({ msg: '${1:Collection} not found!' });
+    });
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>modulebyid</tabTrigger>
