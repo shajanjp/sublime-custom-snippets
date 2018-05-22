@@ -1,0 +1,12 @@
+<snippet>
+  <content><![CDATA[
+res.status(${1:500}).json({
+  'error': error,
+  'message': 'Internal server error'
+})
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>reserror</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.js</scope>
+</snippet>
